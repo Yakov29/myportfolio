@@ -1,0 +1,156 @@
+@keyframes heroAppear {
+  from {
+    background-color: #fff;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    background-color: #c8d6e5;
+  }
+}
+
+@keyframes blink-caret {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes celestialAppearRotate {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+@keyframes sun-roll-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(120vw) rotate(1800deg);
+  }
+}
+
+@keyframes sun-roll-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-120vw) rotate(-1800deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.hero {
+  position: relative;
+  animation: heroAppear 3s ease-out;
+  height: 100vh;
+  background-color: #c8d6e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  transition: background-color 2.5s ease;
+  overflow-x: hidden;
+}
+
+.hero.night {
+  background-color: #0b1e3d;
+  transition: background-color 2.5s ease;
+}
+
+.hero__celestials {
+  display: flex;
+  width: 250px;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  user-select: none;
+  cursor: pointer;
+  will-change: transform, opacity;
+  position: relative;
+}
+
+.celestialAppearRotate {
+  animation: celestialAppearRotate 3s ease-out forwards;
+}
+
+.sun-roll-out {
+  animation: sun-roll-out 5s forwards;
+}
+
+.sun-roll-in {
+  animation: sun-roll-in 5s forwards;
+}
+
+.hero__celestials img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  user-select: none;
+}
+
+.hero__title {
+  font-size: 50px;
+  font-weight: 700;
+  color: #2f3e46;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.hero__title .caret {
+  display: inline-block;
+  width: 3px;
+  background-color: #2f3e46;
+  margin-left: 2px;
+  animation: blink-caret 0.75s step-end infinite;
+  vertical-align: bottom;
+  height: 1em;
+}
+
+.hero__title:hover {
+  color: #ff722b;
+  transition: color 0.3s ease;
+}
+
+.hero__description {
+  font-size: 18px;
+  color: #3a5068;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero__description:hover {
+  color: #ff722b;
+  transition: color 0.3s ease;
+}
+
+.hero__cta {
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #3a5068;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 50px;
+}
+
+.hero__cta:hover {
+  background-color: #2c3e50;
+}
