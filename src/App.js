@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
+import Projects from './components/Projects/Projects';
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -31,8 +32,15 @@ function App() {
     const hero = document.querySelector('.hero');
     const heroTitle = document.querySelector('.hero__title');
     const heroDescription = document.querySelector('.hero__description');
+    const heroScroll = document.querySelector('.hero__scroll');
 
-    if (!header || !headerLogo || !headerList || !headerThemeToggle || !heroTitle) return;
+    const projects = document.querySelector('.projects');
+    const projectsTitle = document.querySelector('.projects__title');
+    const projectsItem = document.querySelectorAll('.projects__item');
+    const projectsItemTitle = document.querySelectorAll('.projects__item-title');
+    const projectsDescription = document.querySelectorAll('.projects__description');
+
+    if (!header || !headerLogo || !headerList || !headerThemeToggle || !heroTitle || !projects) return;
 
     if (theme === 'dark') {
       header.style.backgroundColor = '#0b1e3d';
@@ -40,12 +48,12 @@ function App() {
       headerList.style.color = '#fff';
       headerLink.forEach(link => {
         link.style.color = '#fff';
-        link.addEventListener('mouseenter', () => link.style.color = '#ff722b');
-        link.addEventListener('mouseleave', () => link.style.color = '#fff');
+        link.addEventListener('mouseenter', () => (link.style.color = '#ff722b'));
+        link.addEventListener('mouseleave', () => (link.style.color = '#fff'));
       });
       headerThemeToggle.style.color = '#fff';
-      headerThemeToggle.addEventListener('mouseenter', () => headerThemeToggle.style.color = '#ff722b');
-      headerThemeToggle.addEventListener('mouseleave', () => headerThemeToggle.style.color = '#fff');
+      headerThemeToggle.addEventListener('mouseenter', () => (headerThemeToggle.style.color = '#ff722b'));
+      headerThemeToggle.addEventListener('mouseleave', () => (headerThemeToggle.style.color = '#fff'));
       headerThemeToggle.innerHTML = '🌙';
 
       if (heroCelestial) {
@@ -59,20 +67,32 @@ function App() {
       hero.style.transition = 'none';
 
       heroTitle.style.color = '#fff';
-      heroTitle.addEventListener('mouseenter', () => {
-        heroTitle.style.color = '#ff722b';
-      });
-      heroTitle.addEventListener('mouseleave', () => {
-        heroTitle.style.color = '#fff';
-      });
+      heroTitle.addEventListener('mouseenter', () => (heroTitle.style.color = '#ff722b'));
+      heroTitle.addEventListener('mouseleave', () => (heroTitle.style.color = '#fff'));
       heroDescription.style.color = '#ff722b';
-      heroDescription.addEventListener('mouseenter', () => {
-        heroDescription.style.color = '#fff';
-      });
-      heroDescription.addEventListener('mouseleave', () => {
-        heroDescription.style.color = '#ff722b';
-      });
+      heroDescription.addEventListener('mouseenter', () => (heroDescription.style.color = '#fff'));
+      heroDescription.addEventListener('mouseleave', () => (heroDescription.style.color = '#ff722b'));
+      heroScroll.style.color = '#fff';
 
+      projects.style.backgroundColor = '#0b1e3d';
+      projects.style.animation = 'none';
+      projects.style.transition = 'none';
+      projectsTitle.style.color = '#fff';
+      projectsTitle.addEventListener('mouseenter', () => (projectsTitle.style.color = '#ff722b'));
+      projectsTitle.addEventListener('mouseleave', () => (projectsTitle.style.color = '#fff'));
+      projectsItem.forEach(item => {
+        item.style.backgroundColor = '#1a2b4d';
+      });
+      projectsItemTitle.forEach(itemTitle => {
+        itemTitle.style.color = '#ffffff';
+        itemTitle.addEventListener('mouseenter', () => (itemTitle.style.color = '#ff722b'));
+        itemTitle.addEventListener('mouseleave', () => (itemTitle.style.color = '#fff'));
+      });
+      projectsDescription.forEach(description => {
+        description.style.color = '#ff722b';
+        description.addEventListener('mouseenter', () => (description.style.color = '#fff'));
+        description.addEventListener('mouseleave', () => (description.style.color = '#ff722b'));
+      });
     } else {
       header.style.backgroundColor = '';
       headerLogo.style.color = '';
@@ -106,6 +126,40 @@ function App() {
       heroDescription.addEventListener('mouseleave', () => {
         heroDescription.style.color = '';
       });
+      heroScroll.style.color = '';
+      heroScroll.style.animation = '';
+      heroScroll.style.transition = '';
+      projects.style.backgroundColor = '';
+      projects.style.animation = '';
+      projects.style.transition = '';
+      projectsTitle.style.color = '';
+      projectsTitle.addEventListener('mouseenter', () => {
+        projectsTitle.style.color = '';
+      });
+      projectsTitle.addEventListener('mouseleave', () => {
+        projectsTitle.style.color = '';
+      });
+      projectsItem.forEach(item => {
+        item.style.backgroundColor = '';
+      });
+      projectsItemTitle.forEach(itemTitle => {
+        itemTitle.style.color = '';
+        itemTitle.addEventListener('mouseenter', () => {
+          itemTitle.style.color = '';
+        });
+        itemTitle.addEventListener('mouseleave', () => {
+          itemTitle.style.color = '';
+        });
+      });
+      projectsDescription.forEach(description => {
+        description.style.color = '';
+        description.addEventListener('mouseenter', () => {
+          description.style.color = '';
+        });
+        description.addEventListener('mouseleave', () => {
+          description.style.color = '';
+        });
+      });
     }
   }, [theme]);
 
@@ -120,6 +174,7 @@ function App() {
     <div className="App">
       <Header changeTheme={changeTheme} />
       <Hero />
+      <Projects />
     </div>
   );
 }

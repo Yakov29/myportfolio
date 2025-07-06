@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import Container from "../Container/Container";
 import "./Hero.css";
 
+import { FaArrowDown } from "react-icons/fa";
+
+
+
 const phrases = [
   "Welcome to My Portfolio ❤️",
   "Frontend Developer with React ⚛️",
@@ -164,7 +168,7 @@ const Hero = () => {
           onClick={handleSunClick}
         >
           <img
-          className="hero__celestial"
+            className="hero__celestial"
             src="https://cdn-icons-png.flaticon.com/512/169/169367.png"
             alt="Sun"
             draggable={false}
@@ -178,7 +182,12 @@ const Hero = () => {
         <p className="hero__description">
           Hi, I'm a passionate React frontend developer building dynamic and performant web applications.
         </p>
-        <button className="hero__cta">View My Work</button>
+        <button onClick={() => {
+          document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
+        }} className="hero__cta">View My Work</button>
+        <a href="#projects" className="hero__scroll">
+          <FaArrowDown />
+        </a>
       </Container>
     </section>
   );

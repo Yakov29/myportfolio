@@ -10,6 +10,15 @@
     }
 }
 
+@keyframes scrollUpDown {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(15px);
+  }
+}
+
 @keyframes blink-caret {
     0%, 100% {
         opacity: 0;
@@ -126,6 +135,7 @@
 }
 
 .hero__title {
+    margin-bottom: 50px;
     font-size: 50px;
     font-weight: 700;
     color: inherit;
@@ -150,6 +160,7 @@
 }
 
 .hero__description {
+    
     font-size: 18px;
     color: inherit;
     max-width: 600px;
@@ -177,3 +188,15 @@
     background-color: #2c3e50;
 }
 
+
+.hero__scroll{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #3a5068;
+    cursor: pointer;
+        animation: scrollUpDown 2s ease-in-out infinite;
+
+}
