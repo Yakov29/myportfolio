@@ -164,6 +164,7 @@ const Hero = () => {
           onClick={handleSunClick}
         >
           <img
+          className="hero__celestial"
             src="https://cdn-icons-png.flaticon.com/512/169/169367.png"
             alt="Sun"
             draggable={false}
