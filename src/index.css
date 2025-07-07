@@ -53,3 +53,14 @@ h6 {
 p {
   margin: 0;
 }
+
+.close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #3a5068;
+}

@@ -1,22 +1,19 @@
 @keyframes heroAppear {
     from {
-        background-color: #fff;
         opacity: 0;
     }
-
     to {
         opacity: 1;
-        background-color: #c8d6e5;
     }
 }
 
 @keyframes scrollUpDown {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(15px);
-  }
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(15px);
+    }
 }
 
 @keyframes blink-caret {
@@ -39,66 +36,21 @@
     }
 }
 
-@keyframes sun-roll-out {
-    0% {
-        opacity: 1;
-        transform: translateX(0) rotate(0deg);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(120vw) rotate(1800deg);
-    }
-}
-
-@keyframes sun-roll-in {
-    0% {
-        opacity: 0;
-        transform: translateX(-120vw) rotate(-1800deg);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0) rotate(0deg);
-    }
-}
-
 .hero {
     position: relative;
-    animation: heroAppear 3s ease-out;
+    animation: heroAppear 2s ease-out;
     height: 100vh;
-    background-color: #c8d6e5;
+    background-color: #0b1e3d;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     gap: 30px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 50px 20px;
     box-sizing: border-box;
-    transition: background-color 2.5s ease, color 2.5s ease;
     overflow-x: hidden;
-    color: #3a5068;
-}
-
-.hero.night {
-    background-color: #0b1e3d;
-    color: #ff722b;
-    transition: background-color 2.5s ease, color 2.5s ease;
-}
-
-.hero.night .hero__title,
-.hero.night .hero__description {
-    color: #ff722b;
-}
-
-.hero.night .hero__cta {
-    background-color: #ff722b;
-    color: #0b1e3d;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.hero.night .hero__cta:hover {
-    background-color: #e06015;
+    color: #ff944d;
 }
 
 .hero__celestials {
@@ -107,24 +59,14 @@
     height: 250px;
     justify-content: center;
     align-items: center;
-    position: relative;
     margin: 0 auto;
     user-select: none;
     cursor: pointer;
     will-change: transform, opacity;
-    position: relative;
 }
 
 .celestialAppearRotate {
     animation: celestialAppearRotate 3s ease-out forwards;
-}
-
-.sun-roll-out {
-    animation: sun-roll-out 5s forwards;
-}
-
-.sun-roll-in {
-    animation: sun-roll-in 5s forwards;
 }
 
 .hero__celestials img {
@@ -138,16 +80,17 @@
     margin-bottom: 50px;
     font-size: 50px;
     font-weight: 700;
-    color: inherit;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     white-space: nowrap;
+    transition: color 0.3s ease;
 }
 
 .hero__title .caret {
     display: inline-block;
     width: 3px;
-    background-color: currentColor;
+    background-color: #ffffff;
     margin-left: 2px;
     animation: blink-caret 0.75s step-end infinite;
     vertical-align: bottom;
@@ -156,47 +99,44 @@
 
 .hero__title:hover {
     color: #ff722b;
-    transition: color 0.3s ease;
 }
 
 .hero__description {
-    
     font-size: 18px;
-    color: inherit;
+    color: #ff944d;
     max-width: 600px;
     margin: 0 auto;
+    transition: color 0.3s ease;
 }
 
 .hero__description:hover {
     color: #ff722b;
-    transition: color 0.3s ease;
 }
 
 .hero__cta {
     padding: 12px 30px;
     font-size: 18px;
-    background-color: #3a5068;
-    color: white;
+    background-color: #1c2a3a;
+    color: #ffffff;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
     margin-top: 50px;
 }
 
 .hero__cta:hover {
-    background-color: #2c3e50;
+    background-color: #27394f;
+    color: #ff944d;
 }
 
-
-.hero__scroll{
+.hero__scroll {
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 24px;
-    color: #3a5068;
+    color: #ff722b;
     cursor: pointer;
-        animation: scrollUpDown 2s ease-in-out infinite;
-
+    animation: scrollUpDown 2s ease-in-out infinite;
 }

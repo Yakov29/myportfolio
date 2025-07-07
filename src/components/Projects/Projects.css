@@ -1,5 +1,5 @@
 .projects {
-    background-color: #c8d6e5;
+    background-color: #0b1e3d;
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
@@ -11,32 +11,31 @@
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 30px;
-    color: #3a5068;
+    color: #ffffff;
     cursor: default;
+    transition: color 0.3s ease;
 }
 
 .projects__title:hover {
     color: #ff722b;
-    transition: color 0.3s ease;
 }
 
 .projects__list {
     display: flex;
-    gap: 25px;
     flex-wrap: wrap;
+    gap: 25px;
     justify-content: center; 
     max-width: 1000px;
     width: 100%;
 }
 
 .projects__item {
-    width: 100%;
-    max-width: 300px;
-    background-color: #f0f0f0;
+    width: 300px;
+    background-color: #13294b;
     border-radius: 12px;
     padding: 25px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,28 +46,41 @@
 
 .projects__item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .projects__description {
     font-size: 1rem;
-    color: #333;
+    color: #f0f0f0;
     margin-bottom: 20px;
     line-height: 1.4;
-    flex-grow: 0;
 }
 
 .projects__button {
-    background-color: #3a5068;
+    background-color: #ff722b;
     color: white;
     border: none;
     padding: 12px 25px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .projects__button:hover {
-    background-color: #2c3e50;
+    background-color: #e66010;
+    transform: scale(1.05);
+}
+
+.projects__item-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+    cursor: default;
+}
+
+.projects__item-title:hover {
+    color: #ff722b;
 }

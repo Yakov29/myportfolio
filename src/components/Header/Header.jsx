@@ -9,7 +9,7 @@ import { FaGithub } from "react-icons/fa";
 
 import "./Header.css";
 
-const Header = ({ changeTheme }) => {
+const Header = ({ changeTheme , signUpOpen }) => {
   return (
     <header className="header">
       <Container>
@@ -22,7 +22,7 @@ const Header = ({ changeTheme }) => {
         </ul>
 
       <button className="header__theme-toggle" onClick={changeTheme}></button>
-        <button className="header__signup">Sign Up</button>
+        <button className="header__signup" onClick={signUpOpen}>Sign Up</button>
         <button className="header__avatar"><img className="header__avatar-img" src="https://icons.veryicon.com/png/o/miscellaneous/standard/avatar-15.png" alt="" /></button>
       </Container>
     </header>

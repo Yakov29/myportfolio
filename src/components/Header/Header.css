@@ -10,7 +10,7 @@
 }
 
 header {
-    background-color: #e5e5e5;
+    background-color: #0b1e3d;
     padding: 20px 0;
     animation: headerDropDown 1s ease-out forwards;
     position: fixed;
@@ -29,11 +29,12 @@ header .container {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    transition: transform 0.3s ease;
+    color : #ffffff;
 }
 
 .header__github-img:hover {
     transform: scale(1.1);
-    transition: transform 0.3s ease;
 }
 
 .header__list {
@@ -44,14 +45,14 @@ header .container {
 }
 
 .header__link {
-    color: black;
+    color: #ffffff;
     font-weight: 500;
     font-size: 18px;
+    transition: color 0.3s ease;
 }
 
 .header__link:hover {
     color: #ff722b;
-    transition: color 0.3s ease;
 }
 
 .header__signup {
@@ -62,6 +63,12 @@ header .container {
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header__signup:hover {
+    background-color: #e66010;
+    color: #ffffff;
 }
 
 .header__avatar {
@@ -75,11 +82,11 @@ header .container {
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .header__avatar-img:hover {
     transform: scale(1.1);
-    transition: transform 0.3s ease;
 }
 
 .header__theme-toggle {
@@ -89,9 +96,10 @@ header .container {
     font-size: 24px;
     display: flex;
     margin-right: 50px;
+    color: #ffffff;
+    transition: color 0.3s ease;
 }
 
 .header__theme-toggle:hover {
     color: #ff722b;
-    transition: color 0.3s ease;
 }

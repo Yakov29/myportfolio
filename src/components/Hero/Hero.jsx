@@ -169,7 +169,7 @@ const Hero = () => {
         >
           <img
             className="hero__celestial"
-            src="https://cdn-icons-png.flaticon.com/512/169/169367.png"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
             alt="Sun"
             draggable={false}
             style={{ userSelect: "none" }}

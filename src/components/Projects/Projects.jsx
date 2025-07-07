@@ -31,7 +31,7 @@ const TypingTitle = ({ text }) => {
     }
   }, [charIndex, text]);
 
-  return <h3 className="projects__title">{displayedText}</h3>;
+  return <h3 className="projects__item-title" >{displayedText}</h3>;
 };
 
 const Projects = () => {
@@ -44,8 +44,8 @@ const Projects = () => {
           {projectsData.map(({ title, description, img }, index) => (
             <li className="projects__item" key={index}>
               {/* <img src={img} alt={title} /> */}
-              <TypingTitle className="projects__item-title" text={title} />
-              <p className="projects__description">{description}</p>
+              <TypingTitle text={title} />
+              {/* <p className="projects__description">{description}</p> */}
               <button className="projects__button">
                 View Project <FaArrowRight />
               </button>
