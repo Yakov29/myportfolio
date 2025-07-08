@@ -182,6 +182,18 @@ const Hero = () => {
         <p className="hero__description">
           Hi, I'm a passionate React frontend developer building dynamic and performant web applications.
         </p>
+
+        <div className="hero__icons">
+          <img src="https://skillicons.dev/icons?i=html" alt="HTML" className="hero__icon" />
+          <img src="https://skillicons.dev/icons?i=css" alt="CSS" className="hero__icon" />
+          <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" className="hero__icon" />
+          <img src="https://skillicons.dev/icons?i=nodejs" alt="Node.js" className="hero__icon" />
+          <img src="https://skillicons.dev/icons?i=react" alt="React" className="hero__icon" />
+          <img src="https://skillicons.dev/icons?i=vite" alt="Vite" className="hero__icon" />
+          <img src="https://skillicons.dev/icons?i=github" alt="GitHub" className="hero__icon" />
+          <img src="https://skillicons.dev/icons?i=vscode" alt="VSCode" className="hero__icon" />
+        </div>
+
         <button onClick={() => {
           document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
         }} className="hero__cta">View My Work</button>

@@ -11,8 +11,8 @@ const projectsData = [
     img: "https://via.placeholder.com/150"
   },
   {
-    title: "Project 2",
-    description: "A brief description of Project 2, highlighting its features and technologies used.",
+    title: "My Portfolio",
+    description: "A personal portfolio website showcasing my projects, skills, and experience.",
     img: "https://via.placeholder.com/150"
   }
 ];
@@ -26,7 +26,7 @@ const TypingTitle = ({ text }) => {
       const timeout = setTimeout(() => {
         setDisplayedText((prev) => prev + text[charIndex]);
         setCharIndex((prev) => prev + 1);
-      }, 100); // скорость печатания - 100мс на символ
+      }, 100); 
       return () => clearTimeout(timeout);
     }
   }, [charIndex, text]);

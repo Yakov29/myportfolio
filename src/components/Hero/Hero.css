@@ -140,3 +140,18 @@
     cursor: pointer;
     animation: scrollUpDown 2s ease-in-out infinite;
 }
+
+
+.hero__icons{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.hero__icon{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 10px;
+}
