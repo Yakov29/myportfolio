@@ -5,12 +5,12 @@ import Backdrop from "../Backdrop/Backdrop";
 import { IoClose } from "react-icons/io5";
 
 
-const SignUp = ({ handleClose }) => {
+const SignUp = ({ handleClose, signUp }) => {
 
 
     return (
         <Backdrop className="backdrop signup">
-            <form className="signup__modal">
+            <form className="signup__modal" onSubmit={signUp}>
                 <button type="button" className="close" onClick={handleClose}><IoClose /></button>
                 <h2 className="signup__title">Sign Up</h2>
                 <p className="signup__description">Please fill in the details below to create an account.</p>

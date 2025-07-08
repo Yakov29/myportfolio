@@ -3,6 +3,7 @@
         transform: translateY(-100%);
         opacity: 0;
     }
+
     100% {
         transform: translateY(0);
         opacity: 1;
@@ -30,7 +31,7 @@ header .container {
     height: 50px;
     border-radius: 50%;
     transition: transform 0.3s ease;
-    color : #ffffff;
+    color: #ffffff;
 }
 
 .header__github-img:hover {
@@ -60,33 +61,16 @@ header .container {
     color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     font-weight: 500;
+    font-size: 16px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .header__signup:hover {
     background-color: #e66010;
     color: #ffffff;
-}
-
-.header__avatar {
-    background: none;
-    border: none;
-    display: none;
-}
-
-.header__avatar-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.header__avatar-img:hover {
-    transform: scale(1.1);
 }
 
 .header__theme-toggle {
@@ -102,4 +86,29 @@ header .container {
 
 .header__theme-toggle:hover {
     color: #ff722b;
+}
+
+
+.header__avatar {
+    margin-left: auto;
+    display: flex;
+    color: #ffffff;
+    border-radius: 50%;
+    background: none;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+.header__avatar-img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+}
+
+.header__avatar-img:hover {
+    transform: scale(1.1);
 }
