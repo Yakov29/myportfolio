@@ -8,7 +8,7 @@ import "./Header.css";
 import { FaUser } from "react-icons/fa";
 
 
-const Header = ({ signUpOpen, account }) => {
+const Header = ({ signUpOpen, account, openProfile }) => {
   return (
     <header className="header">
       <Container>
@@ -43,7 +43,7 @@ const Header = ({ signUpOpen, account }) => {
             Sign Up
           </button>
         ) : (
-          <button className="header__avatar">
+          <button className="header__avatar" onClick={openProfile}>
             {account.avatar === "" ? (
               <FaUser className="header__avatar-img" />
             ) : (
