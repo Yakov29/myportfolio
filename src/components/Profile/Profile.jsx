@@ -41,7 +41,7 @@ const Profile = ({ account, handleClose, deleteAccount }) => {
                         )}
                     </div>
                 </div>
-                <button type="button" className="profile__edit">Edit Profile</button>
+                {/* <button type="button" className="profile__edit">Edit Profile</button> */}
                 <button type="button" className="profile__delete" onClick={deleteAccount}>Delete Account</button>
             </form>
         </Backdrop>
