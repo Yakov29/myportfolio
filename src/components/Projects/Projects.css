@@ -84,3 +84,75 @@
 .projects__item-title:hover {
     color: #ff722b;
 }
+
+@media (max-width: 480px) {
+    .projects {
+        padding: 20px 10px;
+    }
+
+    .projects__title {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .projects__item {
+        width: 100%;
+        padding: 20px 15px;
+    }
+
+    .projects__item-title {
+        font-size: 1rem;
+    }
+
+    .projects__description {
+        font-size: 0.9rem;
+    }
+
+    .projects__button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .projects {
+        padding: 30px 20px;
+    }
+
+    .projects__title {
+        font-size: 1.6rem;
+    }
+
+    .projects__item {
+        width: 45%;
+        padding: 22px 18px;
+    }
+
+    .projects__item-title {
+        font-size: 1.1rem;
+    }
+
+    .projects__description {
+        font-size: 0.95rem;
+    }
+
+    .projects__button {
+        font-size: 1rem;
+        padding: 10px 24px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .projects {
+        padding: 40px 30px;
+    }
+
+    .projects__item {
+        width: 280px;
+        padding: 25px 20px;
+    }
+
+    .projects__title {
+        font-size: 1.8rem;
+    }
+}

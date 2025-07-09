@@ -5,7 +5,7 @@ import { FaUser } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 
 
-const Profile = ({ account, handleClose }) => {
+const Profile = ({ account, handleClose, deleteAccount }) => {
     const formatDate = (dateString) => {
         if (!dateString) return "N/A";
         const date = new Date(dateString);
@@ -41,7 +41,8 @@ const Profile = ({ account, handleClose }) => {
                         )}
                     </div>
                 </div>
-                <button className="profile__logout">Logout</button>
+                <button type="button" className="profile__edit">Edit Profile</button>
+                <button type="button" className="profile__delete" onClick={deleteAccount}>Delete Account</button>
             </form>
         </Backdrop>
     );

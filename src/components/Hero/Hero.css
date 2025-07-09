@@ -46,8 +46,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 30px;
-    padding: 50px 20px;
+    gap: 28px;
+    padding: 48px 18px;
     box-sizing: border-box;
     overflow-x: hidden;
     color: #ff944d;
@@ -55,8 +55,8 @@
 
 .hero__celestials {
     display: flex;
-    width: 250px;
-    height: 250px;
+    width: 240px;
+    height: 240px;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -70,21 +70,23 @@
 }
 
 .hero__celestials img {
-    width: 200px;
-    height: 200px;
+    width: 190px;
+    height: 190px;
     object-fit: contain;
     user-select: none;
 }
 
 .hero__title {
-    margin-bottom: 50px;
-    font-size: 50px;
+    margin-bottom: 48px;
+    font-size: 48px;
     font-weight: 700;
     color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    white-space: nowrap;
-    transition: color 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.28);
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    transition: color 0.28s ease;
+    max-width: 100%;
 }
 
 .hero__title .caret {
@@ -102,11 +104,11 @@
 }
 
 .hero__description {
-    font-size: 18px;
+    font-size: 17px;
     color: #ff944d;
     max-width: 600px;
     margin: 0 auto;
-    transition: color 0.3s ease;
+    transition: color 0.28s ease;
 }
 
 .hero__description:hover {
@@ -114,15 +116,15 @@
 }
 
 .hero__cta {
-    padding: 12px 30px;
-    font-size: 18px;
+    padding: 11px 28px;
+    font-size: 17px;
     background-color: #1c2a3a;
     color: #ffffff;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.4s ease, color 0.4s ease;
-    margin-top: 50px;
+    transition: background-color 0.38s ease, color 0.38s ease;
+    margin-top: 48px;
 }
 
 .hero__cta:hover {
@@ -132,26 +134,147 @@
 
 .hero__scroll {
     position: absolute;
-    bottom: 50px;
+    bottom: 48px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 24px;
+    font-size: 23px;
     color: #ff722b;
     cursor: pointer;
     animation: scrollUpDown 2s ease-in-out infinite;
 }
 
-
-.hero__icons{
+.hero__icons {
     display: flex;
-    gap: 10px;
+    gap: 9px;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 48px;
+    flex-wrap: wrap;
 }
 
-.hero__icon{
-    width: 40px;
-    height: 40px;
+.hero__icon {
+    width: 39px;
+    height: 39px;
     object-fit: contain;
     border-radius: 10px;
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 18px 9px;
+        gap: 18px;
+    }
+
+    .hero__title {
+        font-size: 26px;
+        margin-bottom: 18px;
+        white-space: normal;
+    }
+
+    .hero__description {
+        font-size: 13px;
+        max-width: 100%;
+    }
+
+    .hero__cta {
+        font-size: 13px;
+        padding: 9px 18px;
+        margin-top: 18px;
+    }
+
+    .hero__celestials {
+        width: 155px;
+        height: 155px;
+    }
+
+    .hero__celestials img {
+        width: 125px;
+        height: 125px;
+    }
+
+    .hero__icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .hero__scroll {
+        font-size: 17px;
+        bottom: 18px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .hero {
+        padding: 28px 18px;
+        gap: 22px;
+    }
+
+    .hero__title {
+        font-size: 34px;
+        margin-bottom: 28px;
+        white-space: normal;
+    }
+
+    .hero__description {
+        font-size: 15px;
+    }
+
+    .hero__cta {
+        font-size: 15px;
+        padding: 11px 22px;
+    }
+
+    .hero__celestials {
+        width: 195px;
+        height: 195px;
+    }
+
+    .hero__celestials img {
+        width: 155px;
+        height: 155px;
+    }
+
+    .hero__icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .hero__scroll {
+        font-size: 19px;
+        bottom: 28px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .hero {
+        padding: 38px 38px;
+    }
+
+    .hero__title {
+        font-size: 42px;
+        white-space: normal;
+    }
+
+    .hero__description {
+        font-size: 17px;
+    }
+
+    .hero__cta {
+        font-size: 17px;
+        padding: 11px 28px;
+    }
+
+    .hero__celestials {
+        width: 235px;
+        height: 235px;
+    }
+
+    .hero__celestials img {
+        width: 195px;
+        height: 195px;
+    }
+
+    .hero__icon {
+        width: 35px;
+        height: 35px;
+    }
 }

@@ -1,5 +1,18 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  /* outline: 1px solid #ff0000;  */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1199px) {
+  .container {
+    padding: 0 20px;
+  }
 }

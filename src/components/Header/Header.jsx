@@ -45,7 +45,7 @@ const Header = ({ signUpOpen, account, openProfile }) => {
         ) : (
           <button className="header__avatar" onClick={openProfile}>
             {account.avatar === "" ? (
-              <FaUser className="header__avatar-img" />
+              <FaUser className="header__avatar-default" />
             ) : (
               <img
                 className="header__avatar-img"

@@ -27,17 +27,40 @@ function App() {
     setIsProfileOpen(false);
   };
 
-  const signUp = (e) => {
-    e.preventDefault();
+  const signUp = async (data) => {
+    const { name, email, password, avatar } = data;
+
+    let avatarBase64 = '';
+
+    if (avatar) {
+      avatarBase64 = await fileToBase64(avatar);
+    }
+
     const formData = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      password: e.target.password.value,
-      avatar: '',
+      name,
+      email,
+      password,
+      avatar: avatarBase64,
       createdAt: new Date().toISOString()
     };
+
     localStorage.setItem('account', JSON.stringify(formData));
+    setAccount(formData);
     handleSignUpClose();
+  };
+
+  const fileToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  };
+
+  const deleteAccount = () => {
+    localStorage.removeItem('account');
+    setAccount(null);
     document.location.reload();
   };
 
@@ -47,7 +70,7 @@ function App() {
       <Hero />
       <Projects />
       {isSignUpOpen && <SignUp handleClose={handleSignUpClose} signUp={signUp} />}
-      {isProfileOpen && <Profile account={account} handleClose={handleProfileClose} />}
+      {isProfileOpen && <Profile account={account} handleClose={handleProfileClose} deleteAccount={deleteAccount} />}
     </div>
   );
 }

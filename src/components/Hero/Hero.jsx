@@ -4,8 +4,6 @@ import "./Hero.css";
 
 import { FaArrowDown } from "react-icons/fa";
 
-
-
 const phrases = [
   "Welcome to My Portfolio ❤️",
   "Frontend Developer with React ⚛️",
@@ -112,7 +110,6 @@ const phrases = [
   "Prefers function composition over inheritance 🔄"
 ];
 
-
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState("");
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -176,7 +173,15 @@ const Hero = () => {
           />
         </div>
         <h1 className="hero__title">
-          {displayedText}
+          {displayedText.split("").map((char, i) => (
+            <span
+              key={i}
+              className="fade-in-letter"
+              style={{ animationDelay: `${i * 50}ms` }}
+            >
+              {char}
+            </span>
+          ))}
           <span className="caret"></span>
         </h1>
         <p className="hero__description">
