@@ -51,6 +51,7 @@ function App() {
     };
 
     localStorage.setItem('account', JSON.stringify(formData));
+    document.location.reload();
     setAccount(formData);
     handleSignUpClose();
   };
