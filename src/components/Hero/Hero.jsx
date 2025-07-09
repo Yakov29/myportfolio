@@ -107,9 +107,9 @@ const Hero = () => {
           View My Work
         </button>
 
-        <a href="#projects" className="hero__scroll">
+        {/* <a href="#projects" className="hero__scroll">
           <FaArrowDown />
-        </a>
+        </a> */}
       </Container>
     </section>
   );
