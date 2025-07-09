@@ -14,6 +14,8 @@ function App() {
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
+ 
+
   const [account, setAccount] = useState(() => {
     const savedAccount = localStorage.getItem('account');
     return savedAccount ? JSON.parse(savedAccount) : null;

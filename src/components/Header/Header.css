@@ -100,6 +100,12 @@ header .container {
     height: 50px;
     border: none;
     cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.header__avatar:hover {
+    transform: scale(1.1);
 }
 
 .header__avatar-img {

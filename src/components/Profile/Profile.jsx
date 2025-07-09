@@ -22,7 +22,7 @@ const Profile = ({ account, handleClose, deleteAccount }) => {
             <form className="profile__modal">
                 <button type="button" className="close" onClick={handleClose}><IoClose /></button>
 
-                <h2 className="profile__title">Welcome, {account?.name || "User"}</h2>
+                <h2 className="profile__title">{account?.name || "User"}</h2>
                 <p className="profile__description">More information about your account will be displayed here.</p>
                 <div className="profile__content">
 
