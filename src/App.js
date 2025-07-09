@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
@@ -7,6 +7,10 @@ import SignUp from './components/SingUp/SignUp';
 import Profile from './components/Profile/Profile';
 
 function App() {
+  useEffect(() => {
+    document.title = 'My Portfolio';
+    document.documentElement.lang = 'en';
+  }, []);
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
