@@ -59,7 +59,7 @@ const SignUp = ({ handleClose, signUp }) => {
         </button>
         <h2 className="signup__title">Sign Up</h2>
         <p className="signup__description">
-          Please fill in the details below to create an account.
+          Please fill in the details below to create an local account.
         </p>
         <ul className="signup__list">
           <li className="signup__item">

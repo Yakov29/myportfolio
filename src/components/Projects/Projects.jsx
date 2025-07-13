@@ -8,12 +8,13 @@ const projectsData = [
   {
     title: "24hforecast",
     description: "A weather application that provides real-time weather updates and forecasts for the next 24 hours.",
-    img: "https://via.placeholder.com/150"
+    img: "https://raw.githubusercontent.com/Yakov29/24hforecast/bc2bb61abd389bf565d8549803530031a52e8f88/public/logo.svg",
+    used: ["react"]
   },
   {
     title: "My Portfolio",
     description: "A personal portfolio website showcasing my projects, skills, and experience.",
-    img: "https://via.placeholder.com/150"
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
   }
 ];
 
@@ -34,7 +35,7 @@ const TypingTitle = ({ text }) => {
   return <h3 className="projects__item-title" >{displayedText}</h3>;
 };
 
-const Projects = () => {
+const Projects = ({ openProjectData }) => {
   return (
     <section className="projects" id="projects">
       <Container>
@@ -43,10 +44,14 @@ const Projects = () => {
         <ul className="projects__list">
           {projectsData.map(({ title, description, img }, index) => (
             <li className="projects__item" key={index}>
-              {/* <img src={img} alt={title} /> */}
               <TypingTitle text={title} />
-              {/* <p className="projects__description">{description}</p> */}
-              <button className="projects__button">
+              <button
+                className="projects__button"
+                onClick={openProjectData}
+                data-title={title}
+                data-description={description}
+                data-img={img}
+              >
                 View Project <FaArrowRight />
               </button>
             </li>

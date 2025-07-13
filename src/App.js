@@ -1,20 +1,22 @@
-import React, { use, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
+import Header from './components/Header/Header';  // оставлю, как есть
+import Hero from './components/Hero/Hero';        // оставлю, как есть
 import Projects from './components/Projects/Projects';
 import SignUp from './components/SingUp/SignUp';
 import Profile from './components/Profile/Profile';
+import ProjectData from './components/ProjectData/ProjectData';
 
 function App() {
   useEffect(() => {
     document.title = 'My Portfolio';
     document.documentElement.lang = 'en';
   }, []);
+
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-
- 
+  const [isProjectDataOpen, setIsProjectDataOpen] = useState(false);
+  const [projectData, setProjectData] = useState(null);
 
   const [account, setAccount] = useState(() => {
     const savedAccount = localStorage.getItem('account');
@@ -31,6 +33,11 @@ function App() {
 
   const handleProfileClose = () => {
     setIsProfileOpen(false);
+  };
+
+  const handleProjectDataClose = () => {
+    setIsProjectDataOpen(false);
+    setProjectData(null);
   };
 
   const signUp = async (data) => {
@@ -51,9 +58,9 @@ function App() {
     };
 
     localStorage.setItem('account', JSON.stringify(formData));
-    document.location.reload();
     setAccount(formData);
     handleSignUpClose();
+    document.location.reload()
   };
 
   const fileToBase64 = (file) => {
@@ -68,16 +75,31 @@ function App() {
   const deleteAccount = () => {
     localStorage.removeItem('account');
     setAccount(null);
-    document.location.reload();
+    document.location.reload()
+  };
+
+  const openProjectData = (e) => {
+    const target = e.currentTarget;
+    const project = {
+      title: target.dataset.title,
+      description: target.dataset.description,
+      image: target.dataset.img
+    };
+    console.log(project)
+    setProjectData(project);
+    setIsProjectDataOpen(true);
   };
 
   return (
     <div className="App">
       <Header signUpOpen={signUpOpen} account={account} openProfile={() => setIsProfileOpen(true)} />
       <Hero />
-      <Projects />
+      <Projects openProjectData={openProjectData} />
       {isSignUpOpen && <SignUp handleClose={handleSignUpClose} signUp={signUp} />}
       {isProfileOpen && <Profile account={account} handleClose={handleProfileClose} deleteAccount={deleteAccount} />}
+      {isProjectDataOpen && projectData && (
+        <ProjectData handleClose={handleProjectDataClose} project={projectData} />
+      )}
     </div>
   );
 }

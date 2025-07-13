@@ -58,13 +58,15 @@
 
 .projects__button {
     background-color: #ff722b;
-    color: white;
+    color: #fff;
     border: none;
-    padding: 12px 25px;
+    padding: 12px 28px;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
     font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+    box-shadow: 0 4px 8px rgba(255, 114, 43, 0.3);
 }
 
 .projects__button:hover {
