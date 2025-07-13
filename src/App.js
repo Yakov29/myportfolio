@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import Header from './components/Header/Header';  // оставлю, как есть
-import Hero from './components/Hero/Hero';        // оставлю, как есть
+import Header from './components/Header/Header';
+import Hero from './components/Hero/Hero';
 import Projects from './components/Projects/Projects';
 import SignUp from './components/SingUp/SignUp';
 import Profile from './components/Profile/Profile';
@@ -19,22 +19,17 @@ function App() {
   const [projectData, setProjectData] = useState(null);
 
   const [account, setAccount] = useState(() => {
-    const savedAccount = localStorage.getItem('account');
-    return savedAccount ? JSON.parse(savedAccount) : null;
+    try {
+      const savedAccount = localStorage.getItem('account');
+      return savedAccount ? JSON.parse(savedAccount) : null;
+    } catch (e) {
+      return null;
+    }
   });
 
-  const signUpOpen = () => {
-    setIsSignUpOpen(true);
-  };
-
-  const handleSignUpClose = () => {
-    setIsSignUpOpen(false);
-  };
-
-  const handleProfileClose = () => {
-    setIsProfileOpen(false);
-  };
-
+  const signUpOpen = () => setIsSignUpOpen(true);
+  const handleSignUpClose = () => setIsSignUpOpen(false);
+  const handleProfileClose = () => setIsProfileOpen(false);
   const handleProjectDataClose = () => {
     setIsProjectDataOpen(false);
     setProjectData(null);
@@ -44,7 +39,6 @@ function App() {
     const { name, email, password, avatar } = data;
 
     let avatarBase64 = '';
-
     if (avatar) {
       avatarBase64 = await fileToBase64(avatar);
     }
@@ -57,17 +51,45 @@ function App() {
       createdAt: new Date().toISOString()
     };
 
-    localStorage.setItem('account', JSON.stringify(formData));
-    setAccount(formData);
+    try {
+      localStorage.setItem('account', JSON.stringify(formData));
+      setAccount(formData);
+    } catch (e) {
+      alert('Ошибка при сохранении данных. Проверьте настройки браузера.');
+    }
+
     handleSignUpClose();
-    document.location.reload()
   };
 
-  const fileToBase64 = (file) => {
+  const fileToBase64 = (file, maxWidth = 100, maxHeight = 100) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
+      reader.onload = () => {
+        const img = new Image();
+        img.src = reader.result;
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          let width = img.width;
+          let height = img.height;
+
+          if (width > height && width > maxWidth) {
+            height *= maxWidth / width;
+            width = maxWidth;
+          } else if (height > maxHeight) {
+            width *= maxHeight / height;
+            height = maxHeight;
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+
+          resolve(canvas.toDataURL('image/jpeg', 0.8));
+        };
+        img.onerror = (err) => reject(err);
+      };
       reader.onerror = (error) => reject(error);
     });
   };
@@ -75,7 +97,7 @@ function App() {
   const deleteAccount = () => {
     localStorage.removeItem('account');
     setAccount(null);
-    document.location.reload()
+    setIsProfileOpen(false)
   };
 
   const openProjectData = (e) => {
@@ -85,7 +107,6 @@ function App() {
       description: target.dataset.description,
       image: target.dataset.img
     };
-    console.log(project)
     setProjectData(project);
     setIsProjectDataOpen(true);
   };

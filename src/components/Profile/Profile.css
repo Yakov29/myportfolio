@@ -155,7 +155,6 @@ transform: scale(1.05);
         height: 100px;
         margin: 20px 0 0 0;
         margin-left: 0;
-        box-shadow: 0 0 12px 4px rgba(255, 127, 80, 0.75);
     }
 
     .profile__avatar-img {
@@ -204,7 +203,6 @@ transform: scale(1.05);
         height: 110px;
         margin-left: auto;
         margin-right: 0;
-        box-shadow: 0 0 15px 5px rgba(255, 127, 80, 0.85);
     }
 
     .profile__avatar-img {
