@@ -6,6 +6,7 @@ import Projects from './components/Projects/Projects';
 import SignUp from './components/SingUp/SignUp';
 import Profile from './components/Profile/Profile';
 import ProjectData from './components/ProjectData/ProjectData';
+import Demo from './components/Demo/Demo';
 
 function App() {
   useEffect(() => {
@@ -16,6 +17,8 @@ function App() {
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isProjectDataOpen, setIsProjectDataOpen] = useState(false);
+  const [isDemoOpen, setIsDemoOpen] = useState(false);
+
   const [projectData, setProjectData] = useState(null);
 
   const [account, setAccount] = useState(() => {
@@ -29,11 +32,20 @@ function App() {
 
   const signUpOpen = () => setIsSignUpOpen(true);
   const handleSignUpClose = () => setIsSignUpOpen(false);
+
   const handleProfileClose = () => setIsProfileOpen(false);
+
   const handleProjectDataClose = () => {
     setIsProjectDataOpen(false);
     setProjectData(null);
   };
+
+  const handleDemoOpen = () => {
+    setIsDemoOpen(true);
+
+    console.log(projectData)
+  }
+  const handleDemoClose = () => setIsDemoOpen(false);
 
   const signUp = async (data) => {
     const { name, email, password, avatar } = data;
@@ -97,7 +109,7 @@ function App() {
   const deleteAccount = () => {
     localStorage.removeItem('account');
     setAccount(null);
-    setIsProfileOpen(false)
+    setIsProfileOpen(false);
   };
 
   const openProjectData = (e) => {
@@ -105,7 +117,8 @@ function App() {
     const project = {
       title: target.dataset.title,
       description: target.dataset.description,
-      image: target.dataset.img
+      image: target.dataset.img,
+      link: target.dataset.link
     };
     setProjectData(project);
     setIsProjectDataOpen(true);
@@ -119,8 +132,9 @@ function App() {
       {isSignUpOpen && <SignUp handleClose={handleSignUpClose} signUp={signUp} />}
       {isProfileOpen && <Profile account={account} handleClose={handleProfileClose} deleteAccount={deleteAccount} />}
       {isProjectDataOpen && projectData && (
-        <ProjectData handleClose={handleProjectDataClose} project={projectData} />
+        <ProjectData handleClose={handleProjectDataClose} project={projectData} openDemo={handleDemoOpen} />
       )}
+      {isDemoOpen && <Demo handleClose={handleDemoClose} project={projectData} />}
     </div>
   );
 }
