@@ -105,7 +105,7 @@ header .container {
     border-radius: 50%;
     transition: transform 0.3s ease;
 }
-
+ 
 .header__avatar:hover {
     transform: scale(1.1);
 }
@@ -173,5 +173,19 @@ header .container {
     .header__theme-toggle {
         margin-right: 30px;
         font-size: 22px;
+    }
+    
+    .header__avatar{
+        width: 40px;
+        height: 40px;
+
+    }
+
+   .header__avatar,
+    .header__avatar-img,
+    .header__avatar-default {
+        width: 40px;
+        height: 40px;
+        margin-left: 0;
     }
 }
