@@ -32,8 +32,6 @@
   user-select: none;
 }
 
-
-
 .demo__device-select {
   background-color: #001c27;
   color: white;
@@ -157,4 +155,10 @@
 
 .demo__resizer--right {
   right: 0;
+}
+
+@media (max-width: 1024px) {
+  .demo__device-select {
+    display: none;
+  }
 }
