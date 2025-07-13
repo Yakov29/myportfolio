@@ -8,14 +8,14 @@ const projectsData = [
   {
     title: "24hforecast",
     description: "A weather application that provides real-time weather updates and forecasts for the next 24 hours.",
-    img: "https://cdn.creazilla.com/cliparts/75176/sun-icon-clipart-sm.png",
+    img: "https://cdn-icons-png.flaticon.com/512/9055/9055356.png",
     link: "https://yakov29.github.io/24hforecast/"
   },
   {
-    title: "My Portfolio",
-    description: "A personal portfolio website showcasing my projects, skills, and experience.",
+    title: "EnergyFlow",
+    description: "A website with interactive exercises and tools designed for training and skill development. Ideal for coaches, athletes, and anyone looking to improve performance through structured practice.",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
-    link: "https://yakov29.github.io/myportfolio/"
+    link: "https://yakov29.github.io/EnergyFlow/"
   }
 ];
 
