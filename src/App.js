@@ -6,7 +6,6 @@ import Projects from './components/Projects/Projects';
 import SignUp from './components/SingUp/SignUp';
 import Profile from './components/Profile/Profile';
 import ProjectData from './components/ProjectData/ProjectData';
-import Demo from './components/Demo/Demo';
 
 function App() {
   useEffect(() => {
@@ -17,8 +16,6 @@ function App() {
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isProjectDataOpen, setIsProjectDataOpen] = useState(false);
-  const [isDemoOpen, setIsDemoOpen] = useState(false);
-
   const [projectData, setProjectData] = useState(null);
 
   const [account, setAccount] = useState(() => {
@@ -32,7 +29,6 @@ function App() {
 
   const signUpOpen = () => setIsSignUpOpen(true);
   const handleSignUpClose = () => setIsSignUpOpen(false);
-
   const handleProfileClose = () => setIsProfileOpen(false);
 
   const handleProjectDataClose = () => {
@@ -41,11 +37,16 @@ function App() {
   };
 
   const handleDemoOpen = () => {
-    setIsDemoOpen(true);
-
-    console.log(projectData)
-  }
-  const handleDemoClose = () => setIsDemoOpen(false);
+    if (projectData?.link) {
+      window.open(
+        projectData.link,
+        '_blank',
+        'width=1200,height=800,noopener,noreferrer'
+      );
+    } else {
+      alert('Ссылка на проект отсутствует');
+    }
+  };
 
   const signUp = async (data) => {
     const { name, email, password, avatar } = data;
@@ -134,7 +135,6 @@ function App() {
       {isProjectDataOpen && projectData && (
         <ProjectData handleClose={handleProjectDataClose} project={projectData} openDemo={handleDemoOpen} />
       )}
-      {isDemoOpen && <Demo handleClose={handleDemoClose} project={projectData} />}
     </div>
   );
 }

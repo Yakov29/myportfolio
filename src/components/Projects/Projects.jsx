@@ -12,12 +12,21 @@ const projectsData = [
     link: "https://yakov29.github.io/24hforecast/"
   },
   {
+    title: "SeeWorld",
+    description: "A real estate website designed to help users find, view, and explore property listings with ease. Ideal for buyers, renters, and agents looking for a modern, user-friendly experience.",
+    img: "https://yakov29.github.io/seeworld/static/media/logo.bd748fb098f68ea2d22f9f5ef50d1e27.svg",
+    link: "https://yakov29.github.io/seeworld/"
+  },
+
+  {
     title: "EnergyFlow",
     description: "A website with interactive exercises and tools designed for training and skill development. Ideal for coaches, athletes, and anyone looking to improve performance through structured practice.",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+    img: "https://yakov29.github.io/EnergyFlow/image%202.7e3b17d0.png",
     link: "https://yakov29.github.io/EnergyFlow/"
   }
 ];
+
+// https://yakov29.github.io/seeworld/
 
 const TypingTitle = ({ text }) => {
   const [displayedText, setDisplayedText] = useState("");
