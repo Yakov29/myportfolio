@@ -9,24 +9,24 @@ const projectsData = [
     title: "24hforecast",
     description: "A weather application that provides real-time weather updates and forecasts for the next 24 hours.",
     img: "https://cdn-icons-png.flaticon.com/512/9055/9055356.png",
-    link: "https://yakov29.github.io/24hforecast/"
+    link: "https://yakov29.github.io/24hforecast/",
+    date: "06.10.2025"
   },
   {
-    title: "SeeWorld",
-    description: "A real estate website designed to help users find, view, and explore property listings with ease. Ideal for buyers, renters, and agents looking for a modern, user-friendly experience.",
-    img: "https://yakov29.github.io/seeworld/static/media/logo.bd748fb098f68ea2d22f9f5ef50d1e27.svg",
-    link: "https://yakov29.github.io/seeworld/"
+    title: "RoomCraft",
+    description: "A 3D room editor that lets you design, customize, and visualize interiors with ease. Perfect for interior designers, architects, and enthusiasts.",
+    img: "https://github.com/Yakov29/roomcraft/blob/main/public/logo.png?raw=true",
+    link: "https://roomcraft.vercel.app/",
+    date: "07.27.2025"
   },
-
   {
     title: "EnergyFlow",
     description: "A website with interactive exercises and tools designed for training and skill development. Ideal for coaches, athletes, and anyone looking to improve performance through structured practice.",
     img: "https://yakov29.github.io/EnergyFlow/image%202.7e3b17d0.png",
-    link: "https://yakov29.github.io/EnergyFlow/"
+    link: "https://yakov29.github.io/EnergyFlow/",
+    date: "08.20.2024"
   }
 ];
-
-// https://yakov29.github.io/seeworld/
 
 const TypingTitle = ({ text }) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -52,9 +52,11 @@ const Projects = ({ openProjectData }) => {
         <h2 className="projects__title">My Projects</h2>
 
         <ul className="projects__list">
-          {projectsData.map(({ title, description, img, link }, index) => (
+          {projectsData.map(({ title, description, img, link, date }, index) => (
             <li className="projects__item" key={index}>
+              <img className="projects__image" src={img} alt="" />
               <TypingTitle text={title} />
+              <p className="projects__date">Released: {date}</p>
               <button
                 className="projects__button"
                 onClick={openProjectData}
@@ -62,6 +64,7 @@ const Projects = ({ openProjectData }) => {
                 data-description={description}
                 data-img={img}
                 data-link={link}
+                data-date={date}
               >
                 View Project <FaArrowRight />
               </button>

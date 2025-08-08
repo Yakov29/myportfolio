@@ -87,6 +87,20 @@
     color: #ff722b;
 }
 
+.projects__image{
+    max-width: 150px;
+    max-height: 150px;
+    margin-bottom: 50px;
+}
+
+.projects__date {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+
 @media (max-width: 480px) {
     .projects {
         padding: 20px 10px;

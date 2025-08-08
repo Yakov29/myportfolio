@@ -9,9 +9,10 @@
         opacity: 1;
     }
 }
-
 header {
-    background-color: #0b1e3d;
+    background: rgba(11, 30, 61, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 20px 0;
     animation: headerDropDown 1s ease-out forwards;
     position: fixed;
@@ -20,6 +21,7 @@ header {
     right: 0;
     z-index: 1000;
 }
+
 
 header .container {
     display: flex;
