@@ -28,13 +28,14 @@ const projectsData = [
     link: "https://yakov29.github.io/EnergyFlow/",
     date: "08.20.2024"
   },
-  {
+ {
     title: "FALLI",
-    description: "A 3D room editor that lets you design, customize, and visualize interiors with ease. Perfect for interior designers, architects, and enthusiasts.",
+    description: "Falli: Elemental Sandbox — a 2D falling sand simulation where you can experiment with over 15 unique elements, observing realistic physics, chemistry, and thermodynamics in a dynamic sandbox.",
     img: "",
     link:"https://falli.vercel.app/",
     date: "10.31.2025"
-  },
+},
+
 ];
 
 const TypingTitle = ({ text }) => {
