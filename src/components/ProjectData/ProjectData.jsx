@@ -15,11 +15,11 @@ const ProjectData = ({ project, handleClose, openDemo }) => {
           <p className="project-data__description">{project.description}</p>
           <button onClick={openDemo} type="button" className="project-data__button">See Demo</button>
         </div>
-        <img
+        {/* <img
           className="project-data__image"
           src={project.image}
           alt={project.title}
-        />
+        /> */}
       </form>
     </Backdrop>
   );

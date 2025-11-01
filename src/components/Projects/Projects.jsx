@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Container from "../Container/Container";
 import "./Projects.css";
 
+import falli from "../../images/icon.png"
+
 import { FaArrowRight } from "react-icons/fa6";
 
 const projectsData = [
@@ -25,7 +27,14 @@ const projectsData = [
     img: "https://yakov29.github.io/EnergyFlow/image%202.7e3b17d0.png",
     link: "https://yakov29.github.io/EnergyFlow/",
     date: "08.20.2024"
-  }
+  },
+  {
+    title: "FALLI",
+    description: "A 3D room editor that lets you design, customize, and visualize interiors with ease. Perfect for interior designers, architects, and enthusiasts.",
+    img: "",
+    link:"https://falli.vercel.app/",
+    date: "10.31.2025"
+  },
 ];
 
 const TypingTitle = ({ text }) => {
@@ -54,7 +63,7 @@ const Projects = ({ openProjectData }) => {
         <ul className="projects__list">
           {projectsData.map(({ title, description, img, link, date }, index) => (
             <li className="projects__item" key={index}>
-              <img className="projects__image" src={img} alt="" />
+              {/* <img className="projects__image" src={img} alt="" /> */}
               <TypingTitle text={title} />
               <p className="projects__date">Released: {date}</p>
               <button
